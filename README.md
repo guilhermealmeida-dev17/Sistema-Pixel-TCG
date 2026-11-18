@@ -65,7 +65,7 @@ CREATE DATABASE pixel_tcg OWNER pixel_tcg;
 
 Se o usuário ou banco já existir, não crie novamente. Use as credenciais existentes ou ajuste a senha do usuário. Na primeira inicialização, o Flyway cria e atualiza as tabelas automaticamente.
 
-> Os arquivos `docs/pixel_tcg_banco.sql` e `docs/pixel_tcg_banco_referencia_anterior.sql` são referências SQL. Para uma instalação nova, não os importe: as migrações do próprio projeto são a fonte usada para preparar o banco.
+> `docs/pixel_tcg_banco.sql` é o arquivo SQL de referência incluído para consulta e compartilhamento. A aplicação não o importa automaticamente: para uma instalação nova, as migrações Flyway do próprio projeto preparam o banco.
 
 ## ▶️ Iniciar o sistema
 
@@ -103,7 +103,7 @@ Saia da conta e entre novamente para atualizar a sessão. O projeto não cria us
 - [`docs/API.md`](docs/API.md) — rotas e exemplos da API.
 - [`INSTRUCOES_APRESENTACAO.md`](INSTRUCOES_APRESENTACAO.md) — roteiro de apresentação.
 - [`docs/PIXEL.DOCUMENTACAO.pdf`](docs/PIXEL.DOCUMENTACAO.pdf) — documentação do projeto.
-- [`docs/REVISAO_PREVIA_APIS.md`](docs/REVISAO_PREVIA_APIS.md) — revisão das APIs.
+- [`docs/pixel_tcg_banco.sql`](docs/pixel_tcg_banco.sql) — SQL de referência do banco.
 
 ## 📤 Enviar alterações ao GitHub
 
@@ -118,3 +118,4 @@ git push
 Se você recebeu os arquivos por ZIP e vai publicar em um **repositório novo e vazio**, inicialize o Git e configure o endereço do novo repositório antes do primeiro envio. Não repita `git init` em uma pasta que já seja um repositório Git.
 
 O arquivo `.gitignore` evita enviar arquivos compilados, configurações locais e segredos. **Não publique senhas do PostgreSQL, tokens ou chaves privadas.**
+
