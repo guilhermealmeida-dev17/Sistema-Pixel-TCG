@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Imagem ilustrativa do produto Pixel TCG">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071a2e"/>
+      <stop offset="1" stop-color="#123f68"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#c9edff"/>
+      <stop offset="1" stop-color="#55a9e8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" rx="24" fill="url(#bg)"/>
+  <circle cx="520" cy="82" r="140" fill="#2d91d1" opacity=".12"/>
+  <circle cx="105" cy="420" r="180" fill="#49b4ef" opacity=".09"/>
+  <g transform="translate(250 95) rotate(8 75 120)">
+    <rect x="-18" y="-15" width="155" height="235" rx="18" fill="#07101e" opacity=".55"/>
+    <rect x="-8" y="-25" width="155" height="235" rx="18" fill="url(#card)" stroke="#e6f7ff" stroke-width="5"/>
+    <rect x="9" y="-8" width="119" height="174" rx="10" fill="#0d2a47"/>
+    <path d="M68 26 88 79 68 68 48 79Z" fill="#a8e2ff"/>
+    <path d="M68 60 97 112 68 99 39 112Z" fill="#4ca9e8"/>
+    <path d="M68 91 84 129 68 120 52 129Z" fill="#d9f4ff"/>
+    <rect x="12" y="178" width="113" height="9" rx="4" fill="#0d2a47" opacity=".75"/>
+  </g>
+  <text x="320" y="386" text-anchor="middle" fill="#e8f6ff" font-family="Arial, sans-serif" font-size="31" font-weight="700" letter-spacing="5">PIXEL TCG</text>
+  <text x="320" y="421" text-anchor="middle" fill="#9ec9e8" font-family="Arial, sans-serif" font-size="15" letter-spacing="2">IMAGEM ILUSTRATIVA</text>
+</svg>

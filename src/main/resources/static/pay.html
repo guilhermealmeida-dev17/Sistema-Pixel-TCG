@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="theme.js"></script>
+    <script src="guard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento Pix - Pixel TCG</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="IMG/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="conta.css">
+    <link rel="stylesheet" href="pay.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="steps.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <div class="top-notice">SEU PRÓXIMO PULL COMEÇA AQUI. Produtos cadastrados no catálogo da Pixel TCG.</div>
+    <header>
+        <div class="header-main">
+            <a href="home.html" class="logo"><img src="IMG/logo.png" alt="Pixel TCG Logo"></a>
+            <div class="search-bar"><input type="text" placeholder="Busque cartas, boosters, coleções e muito mais..."><button type="button"><i class="fa-solid fa-magnifying-glass"></i></button></div>
+            <div class="header-actions">
+                <a href="login.html" class="user-account"><i class="fa-regular fa-user"></i><div><span class="subtext">Olá, colecionador</span><span class="action-text">Entre ou cadastre-se</span></div></a>
+                <a href="carrinho.html" class="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span class="cart-label">Carrinho</span><span class="cart-count">0</span></a>
+            </div>
+        </div>
+        <nav class="nav-categories"><ul>
+            <li><a href="#" class="nav-all"><i class="fa-solid fa-bars"></i> Todas as categorias</a></li>
+            <li><a href="#">Boosters</a></li><li><a href="#">Boxes e coleções</a></li><li><a href="#">Acessórios</a></li>
+        </ul></nav>
+    </header>
+
+    <main class="pay-page" id="pay-page">
+        <section class="pay-card pay-center" id="pay-loading" hidden>
+            <span class="pay-spinner pay-spinner--lg"></span>
+            <p>Gerando seu Pix...</p>
+        </section>
+
+        <section class="pay-card pay-center" id="pay-empty">
+            <i class="fa-solid fa-circle-info pay-big-ico"></i>
+            <h2>Pagamento ainda não integrado</h2>
+            <p class="pay-muted">Os pedidos são registrados no banco e ficam aguardando pagamento. Esta versão não gera Pix nem processa cobranças.</p>
+            <a href="conta-pedidos.html" class="pay-btn pay-btn--primary">Ver meus pedidos</a>
+            <a href="home.html" class="pay-btn pay-btn--outline">Voltar à loja</a>
+        </section>
+
+        <section class="pay-card pay-center" id="pay-error" hidden>
+            <i class="fa-solid fa-triangle-exclamation pay-big-ico pay-red"></i>
+            <h2>Pagamento indisponível</h2>
+            <p class="pay-muted" id="pay-error-msg"></p>
+            <p class="pay-muted pay-hint" id="pay-error-hint" hidden></p>
+            <div class="pay-err-actions"><a href="conta-pedidos.html" class="pay-btn pay-btn--primary">Ver meus pedidos</a><a href="home.html" class="pay-btn pay-btn--outline">Voltar à loja</a></div>
+        </section>
+
+        <div id="pay-content" hidden>
+            <div class="pay-banner" id="pay-banner">
+                <span class="pay-banner__icon" id="pay-icon"><i class="fa-regular fa-clock"></i></span>
+                <h1 id="pay-title">Falta pouco! Pague o Pix para confirmar seu pedido.</h1>
+            </div>
+
+            <div class="pay-grid">
+                <div class="pay-main">
+                    <section class="pay-card pay-qr-card">
+                        <div class="pay-timer">
+                            <i class="fa-regular fa-clock"></i>
+                            <div><span class="pay-timer__label">TEMPO RESTANTE PARA PAGAMENTO</span><strong id="pay-timer">--:--</strong></div>
+                        </div>
+
+                        <div class="pay-qr" id="pay-qr-box"><img id="pay-qr-img" alt="QR Code Pix" width="200" height="200"></div>
+                        <p class="pay-qr-hint">Aponte a câmera do seu celular ou abra o app do seu banco para pagar</p>
+
+                        <div class="pay-copy">
+                            <span class="pay-copy__label">OU PAGUE PELO PIX COPIA E COLA</span>
+                            <div class="pay-copy__row">
+                                <input id="pay-code" readonly aria-label="Código Pix copia e cola">
+                                <button type="button" class="pay-btn pay-btn--blue" id="pay-copy"><i class="fa-regular fa-copy"></i> Copiar código PIX</button>
+                            </div>
+                        </div>
+
+                        <button type="button" class="pay-btn pay-btn--check" id="pay-check"><i class="fa-solid fa-circle-check"></i> Já paguei, verificar agora</button>
+                        <div class="pay-status" id="pay-status">
+                            <span class="pay-spinner"></span>
+                            <span id="pay-status-text">Esperando o pagamento. Assim que o banco confirmar, esta página atualiza sozinha. Não precisa enviar comprovante.</span>
+                        </div>
+                    </section>
+
+                    <section class="pay-card">
+                        <h2 class="pay-h2"><i class="fa-solid fa-mobile-screen"></i> Como pagar pelo celular ou internet banking</h2>
+                        <ol class="pay-steps">
+                            <li><b>Abra o app do seu banco</b><span>Acesse a área Pix no app ou internet banking.</span></li>
+                            <li><b>Selecione Pix</b><span>Escolha "Pagar com QR Code" ou "Pix Copia e Cola".</span></li>
+                            <li><b>Confira os dados</b><span>Verifique o valor e o recebedor: Pixel TCG.</span></li>
+                            <li><b>Pronto! A confirmação é na hora</b><span>Seu pedido é atualizado automaticamente.</span></li>
+                        </ol>
+                    </section>
+
+                    <section class="pay-card">
+                        <h2 class="pay-h2"><i class="fa-solid fa-truck"></i> Destino e dados do frete</h2>
+                        <div class="pay-two">
+                            <div><b>Endereço de entrega</b><p class="pay-muted" id="pay-addr">Endereço informado no checkout.</p></div>
+                            <div><b>Forma de envio</b><p class="pay-muted" id="pay-frete-side">--</p></div>
+                        </div>
+                    </section>
+                </div>
+
+                <aside class="pay-side">
+                    <section class="pay-card pay-summary">
+                        <h2 class="pay-h2">Resumo da compra</h2>
+                        <p class="pay-muted" id="pay-order"></p>
+                        <div id="pay-items"></div>
+                        <dl>
+                            <div><dt>Subtotal</dt><dd id="pay-subtotal">--</dd></div>
+                            <div class="pay-off"><dt>Desconto ilustrativo</dt><dd id="pay-desconto">--</dd></div>
+                            <div><dt>Frete</dt><dd id="pay-frete">--</dd></div>
+                            <div class="pay-total"><dt>Total demonstrativo</dt><dd id="pay-total">--</dd></div>
+                        </dl>
+                        <a href="home.html" class="pay-btn pay-btn--ghost" id="pay-follow">Voltar para a loja</a>
+                        <div class="pay-links"><a href="checkout.html"><i class="fa-solid fa-arrow-left"></i> Alterar entrega ou forma de pagamento</a><a href="home.html" data-sx><i class="fa-solid fa-magnifying-glass"></i> Ver mais produtos</a></div>
+                    </section>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <img src="IMG/logo.png" alt="Pixel TCG" class="footer-logo">
+                <p>Loja oficial de cartas Pokémon, boosters e acessórios para colecionadores. Originalidade, curadoria e envio seguro para todo o Brasil.</p>
+                <div class="social-icons"><a href="#"><i class="fa-brands fa-instagram"></i></a><a href="#"><i class="fa-brands fa-youtube"></i></a><a href="#"><i class="fa-brands fa-whatsapp"></i></a></div>
+            </div>
+            <div class="footer-col"><h3>LOJA</h3><ul><li><a href="#">Boosters</a></li><li><a href="#">Boxes e coleções</a></li><li><a href="#">Acessórios</a></li><li><a href="#">Novidades</a></li></ul></div>
+            <div class="footer-col"><h3>COMPRAS</h3><ul><li><a href="#">Entrega e frete</a></li><li><a href="#">Perguntas frequentes</a></li></ul></div>
+            <div class="footer-col"><h3>PODEMOS AJUDAR?</h3><ul><li><a href="#">WhatsApp</a></li><li><a href="#">Dúvidas frequentes</a></li><li><a href="#">Envios e prazos</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos de Uso</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 Pixel TCG. Todos os direitos reservados.</p><div class="security-badge"><i class="fa-solid fa-shield-halved"></i> AMBIENTE SEGURO · COMPRA PROTEGIDA</div></div>
+    </footer>
+
+    <script src="produtos.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="cart.js"></script>
+    <script src="orders.js"></script>
+    <script src="conta.js"></script>
+    <script src="steps.js"></script>
+    <script src="search.js"></script>
+    <script src="pay.js"></script>
+</body>
+</html>

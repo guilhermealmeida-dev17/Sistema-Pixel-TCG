@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <script src="theme.js"></script>
+    <script src="guard.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel TCG - Home</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="icon" type="image/png" href="IMG/logo.png">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome para Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Arquivo CSS -->
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="conta.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+
+    <!-- Bar de Avisos Superior -->
+    <div class="top-notice">
+        SEU PRÓXIMO PULL COMEÇA AQUI. Produtos cadastrados no catálogo da Pixel TCG.
+    </div>
+
+    <!-- Header Principal -->
+    <header>
+        <div class="header-main">
+            <a href="index.html" class="logo">
+                <img src="IMG/logo.png" alt="Pixel TCG Logo">
+            </a>
+
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar cartas, boosters, coleções e muito mais...">
+                <button type="button"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+
+            <div class="header-actions">
+                <a href="login.html" class="user-account">
+                    <i class="fa-regular fa-user"></i>
+                    <div>
+                        <span class="subtext">Olá, colecionador</span>
+                        <span class="action-text">Entre ou cadastre-se</span>
+                    </div>
+                </a>
+
+                <a href="carrinho.html" class="cart-btn">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-label">Carrinho</span>
+                    <span class="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+
+        <!-- Navegação de Categorias -->
+        <nav class="nav-categories">
+            <ul>
+                <li><a href="#" class="nav-all"><i class="fa-solid fa-bars"></i> Todas as categorias</a></li>
+                <li><a href="#cat-boosters" data-scroll>Boosters</a></li>
+                <li><a href="#cat-boxes" data-scroll>Boxes e coleções</a></li>
+                <li><a href="#cat-acessorios" data-scroll>Acessórios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Banner com Logo Grande de Fundo Sobreposta -->
+        <section class="hero-banner">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <span class="hero-tag">DE COLECIONADOR PARA COLECIONADOR</span>
+                    <h1 id="hero-title">SUA PRÓXIMA<br>CARTA LENDÁRIA<br><span>ESTÁ AQUI.</span></h1>
+                    <p id="hero-desc">Da primeira abertura à peça que faltava no seu binder. Encontre o extraordinário em cada carta Pokémon na Pixel TCG.</p>
+                    
+                    <div class="hero-actions">
+                        <a href="#produtos" class="btn-primary" id="btn-primary" data-sx>Explorar cartas <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                        <a href="#lancamentos" class="btn-secondary" id="btn-secondary" data-scroll>Ver lançamentos <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </div>
+
+                <!-- Elemento da Logo Grande no Fundo do Hero -->
+                <div class="hero-image-bg">
+                    <img src="IMG/logo.png" alt="Pixel TCG Marca D'água" class="hero-logo-large">
+                </div>
+            </div>
+            
+            <!-- Controles do Carrossel (Setas e Pontos) -->
+            <div class="carousel-controls">
+                <button class="carousel-arrow prev-btn" aria-label="Anterior"><i class="fa-solid fa-chevron-left"></i></button>
+                <div class="carousel-indicators">
+                    <button type="button" class="dot active" aria-label="Slide 1"></button>
+                    <button type="button" class="dot" aria-label="Slide 2"></button>
+                    <button type="button" class="dot" aria-label="Slide 3"></button>
+                </div>
+                <button class="carousel-arrow next-btn" aria-label="Próximo"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+        </section>
+
+        <!-- Faixa de Recursos e Benefícios -->
+        <section class="store-features" id="beneficios">
+            <div class="feature-item">
+                <i class="fa-solid fa-box-open"></i>
+                <div>
+                    <h4>Produtos originais</h4>
+                    <p>Autenticidade em cada detalhe</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-shield-halved"></i>
+                <div>
+                    <h4>Embalagem protegida</h4>
+                    <p>Cuidado de colecionador</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-credit-card"></i>
+                <div>
+                    <h4 id="feat-parc">Pedido no banco de dados</h4>
+                    <p>Pagamento ainda não integrado</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <i class="fa-solid fa-truck-fast"></i>
+                <div>
+                    <h4>Endereço de entrega</h4>
+                    <p>Frete ainda não integrado</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Vitrine de Produtos -->
+        <section class="products-section" id="produtos">
+            <span id="lancamentos"></span>
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">DESTAQUES DA LOJA</span>
+                    <h2>Cartas, boosters e coleções em alta</h2>
+                    <p>O que está movendo a coleção agora: peças raras, lançamentos frescos e itens para completar seu binder.</p>
+                </div>
+                <a href="#" class="btn-link" data-sx>Ver todos os produtos <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="products-grid">
+                <article class="product-card" data-id="booster-box-paldea">
+                    <span class="card-badge badge-blue">NOVO</span>
+                    <div class="card-image"><a href="produto.html?id=booster-box-paldea"><img src="IMG/produtos/booster-box.jpg" alt="Booster Box Pokémon: Paldea Evolved" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">BOOSTER</span><span>36 pacotes</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=booster-box-paldea" style="color:inherit;text-decoration:none">Booster Box Pokémon: Paldea Evolved</a></h3>
+                        <p class="product-desc">Edição especial com pulls raras, holográficas e cards exclusivos da série.</p>
+                        <div class="price-container"><span class="price">R$ 349,90</span><span class="installments">ou 6x R$ 58,32</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="booster-box-paldea">
+                    <span class="card-badge badge-blue">NOVO</span>
+                    <div class="card-image"><a href="produto.html?id=booster-box-paldea"><img src="IMG/produtos/booster-box.jpg" alt="Booster Box Pokémon: Paldea Evolved" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">BOOSTER</span><span>36 pacotes</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=booster-box-paldea" style="color:inherit;text-decoration:none">Booster Box Pokémon: Paldea Evolved</a></h3>
+                        <p class="product-desc">Edição especial com pulls raras, holográficas e cards exclusivos da série.</p>
+                        <div class="price-container"><span class="price">R$ 349,90</span><span class="installments">ou 6x R$ 58,32</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="booster-box-paldea">
+                    <span class="card-badge badge-blue">NOVO</span>
+                    <div class="card-image"><a href="produto.html?id=booster-box-paldea"><img src="IMG/produtos/booster-box.jpg" alt="Booster Box Pokémon: Paldea Evolved" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">BOOSTER</span><span>36 pacotes</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=booster-box-paldea" style="color:inherit;text-decoration:none">Booster Box Pokémon: Paldea Evolved</a></h3>
+                        <p class="product-desc">Edição especial com pulls raras, holográficas e cards exclusivos da série.</p>
+                        <div class="price-container"><span class="price">R$ 349,90</span><span class="installments">ou 6x R$ 58,32</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="binder-premium">
+                    <span class="card-badge badge-gold">EM ALTA</span>
+                    <div class="card-image"><a href="produto.html?id=binder-premium"><img src="IMG/produtos/binder.jpg" alt="Binder Premium Pixel TCG" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">BINDER</span><span>320 slots</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=binder-premium" style="color:inherit;text-decoration:none">Binder Premium Pixel TCG</a></h3>
+                        <p class="product-desc">Capa reforçada, páginas duplas e organização ideal para coleções em crescimento.</p>
+                        <div class="price-container"><span class="price">R$ 129,90</span><span class="installments">ou 3x R$ 43,30</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="blister-raypaxale">
+                    <span class="card-badge badge-dark">RARIDADE</span>
+                    <div class="card-image"><a href="produto.html?id=blister-raypaxale"><img src="IMG/produtos/blister.jpg" alt="Blister Holográfico: Raypaxale VMAX" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">BLISTER</span><span>3 boosters</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=blister-raypaxale" style="color:inherit;text-decoration:none">Blister Holográfico: Raypaxale VMAX</a></h3>
+                        <p class="product-desc">Edição com carta promocional holográfica e moeda exclusiva.</p>
+                        <div class="price-container"><span class="price">R$ 89,90</span><span class="installments">ou 3x R$ 29,97</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="sleeves-premium">
+                    <span class="card-badge badge-dark">PROTEÇÃO</span>
+                    <div class="card-image"><a href="produto.html?id=sleeves-premium"><img src="IMG/produtos/sleeves.jpg" alt="Sleeves Premium Pixel TCG" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">SLEEVES</span><span>65 unidades</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=sleeves-premium" style="color:inherit;text-decoration:none">Sleeves Premium Pixel TCG</a></h3>
+                        <p class="product-desc">Sleeves resistentes, brilho elegante e proteção para cartas valiosas.</p>
+                        <div class="price-container"><span class="price">R$ 49,90</span><span class="installments">ou 2x R$ 24,95</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="caixa-armazenamento">
+                    <span class="card-badge badge-dark">ORGANIZAÇÃO</span>
+                    <div class="card-image"><a href="produto.html?id=caixa-armazenamento"><img src="IMG/produtos/caixa.jpg" alt="Caixa de Armazenamento Pixel TCG" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">STORAGE</span><span>500 cartas</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=caixa-armazenamento" style="color:inherit;text-decoration:none">Caixa de Armazenamento Pixel TCG</a></h3>
+                        <p class="product-desc">Organize sua coleção com espaço para cartas, dados e acessórios.</p>
+                        <div class="price-container"><span class="price">R$ 79,90</span><span class="installments">ou 3x R$ 26,63</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+                <article class="product-card" data-id="deck-box">
+                    <span class="card-badge badge-dark">DECK</span>
+                    <div class="card-image"><a href="produto.html?id=deck-box"><img src="IMG/produtos/deck-box.jpg" alt="Deck Box Pixel TCG" onerror="this.style.visibility='hidden'"></a></div>
+                    <div class="card-info">
+                        <div class="card-meta"><span class="meta-tag">DECK BOX</span><span>100 cartas</span></div>
+                        <h3 class="product-title"><a href="produto.html?id=deck-box" style="color:inherit;text-decoration:none">Deck Box Pixel TCG</a></h3>
+                        <p class="product-desc">Espaço para deck, sleeves e acessórios com fechamento magnético.</p>
+                        <div class="price-container"><span class="price">R$ 59,90</span><span class="installments">ou 2x R$ 29,95</span></div>
+                        <button class="btn-add-cart">Adicionar ao carrinho <i class="fa-solid fa-arrow-up-right-from-square"></i></button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categorias -->
+        <section class="products-section" id="categorias">
+            <div class="section-header">
+                <div>
+                    <span class="section-tag">CATEGORIAS</span>
+                    <h2>Explore por categoria</h2>
+                </div>
+            </div>
+            <div class="products-grid">
+                <article class="category-card" id="cat-boosters">
+                    
+                    <div class="card-image cat-image"><img src="IMG/categorias/boosters.jpg" alt="Boosters" onerror="this.style.visibility='hidden'"></div>
+                    <div class="card-info">
+                        <h3 class="product-title">Boosters</h3>
+                        <p class="product-desc">Caixas, blister e pacotes para completar sua coleção.</p>
+                        <a href="#" class="btn-add-cart" data-sx data-sx-cats="Boosters &amp; Boxes">Ver categoria <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="category-card" id="cat-cartas">
+                    
+                    <div class="card-image cat-image"><img src="IMG/categorias/cartas.jpg" alt="Cartas avulsas" onerror="this.style.visibility='hidden'"></div>
+                    <div class="card-info">
+                        <h3 class="product-title">Cartas avulsas</h3>
+                        <p class="product-desc">Singles, holográficas e peças raras para completar seu set.</p>
+                        <a href="#" class="btn-add-cart" data-sx data-sx-q="carta avulsa">Ver categoria <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="category-card" id="cat-acessorios">
+                    
+                    <div class="card-image cat-image"><img src="IMG/categorias/acessorios.jpg" alt="Acessórios" onerror="this.style.visibility='hidden'"></div>
+                    <div class="card-info">
+                        <h3 class="product-title">Acessórios</h3>
+                        <p class="product-desc">Sleeves, top loaders, binders e organizadores para colecionadores.</p>
+                        <a href="#" class="btn-add-cart" data-sx data-sx-cats="Acessórios">Ver categoria <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="category-card" id="cat-boxes">
+                    
+                    <div class="card-image cat-image"><img src="IMG/categorias/boxes.jpg" alt="Boxes e coleções" onerror="this.style.visibility='hidden'"></div>
+                    <div class="card-info">
+                        <h3 class="product-title">Boxes e coleções</h3>
+                        <p class="product-desc">Edições especiais, starter decks e coleções completas.</p>
+                        <a href="#" class="btn-add-cart" data-sx data-sx-cats="Boosters &amp; Boxes">Ver categoria <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="category-card" id="cat-deck">
+                    <span class="card-badge badge-dark">NOVO</span>
+                    <div class="card-image cat-image"><img src="IMG/categorias/deck.jpg" alt="Deck e organização" onerror="this.style.visibility='hidden'"></div>
+                    <div class="card-info">
+                        <h3 class="product-title">Deck e organização</h3>
+                        <p class="product-desc">Caixas, binders e acessórios para manter sua coleção em ordem.</p>
+                        <a href="#" class="btn-add-cart" data-sx data-sx-cats="Acessórios" data-sx-q="deck">Ver categoria <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+                <article class="category-card" id="cat-protecao">
+                    <span class="card-badge badge-dark">NOVO</span>
+                    <div class="card-image cat-image"><img src="IMG/categorias/protecao.jpg" alt="Proteção e display" onerror="this.style.visibility='hidden'"></div>
+                    <div class="card-info">
+                        <h3 class="product-title">Proteção e display</h3>
+                        <p class="product-desc">Top loaders, sleeves e displays para preservar suas peças mais valiosas.</p>
+                        <a href="#" class="btn-add-cart" data-sx data-sx-cats="Acessórios" data-sx-q="proteção">Ver categoria <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-col brand-col">
+                <img src="IMG/logo.png" alt="Pixel TCG" class="footer-logo">
+                <p>Loja oficial de cartas Pokémon, boosters e acessórios para colecionadores. Originalidade, curadoria e envio seguro para todo o Brasil.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col"><h3>LOJA</h3><ul>
+                <li><a href="#" data-sx data-sx-cats="Boosters &amp; Boxes">Boosters</a></li><li><a href="#" data-sx data-sx-cats="Boosters &amp; Boxes">Boxes e coleções</a></li><li><a href="#" data-sx data-sx-cats="Acessórios">Acessórios</a></li><li><a href="#lancamentos" data-scroll>Novidades</a></li></ul></div>
+            <div class="footer-col"><h3>COMPRAS</h3><ul>
+                <li><a href="#">Entrega e frete</a></li><li><a href="#">Perguntas frequentes</a></li></ul></div>
+            <div class="footer-col"><h3>PODEMOS AJUDAR?</h3><ul>
+                <li><a href="#">WhatsApp</a></li><li><a href="#">Dúvidas frequentes</a></li><li><a href="#">Envios e prazos</a></li><li><a href="#">Política de Privacidade</a></li><li><a href="#">Termos de Uso</a></li></ul></div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pixel TCG. Todos os direitos reservados.</p>
+            <div class="security-badge"><i class="fa-solid fa-shield-halved"></i> AMBIENTE SEGURO · COMPRA PROTEGIDA</div>
+        </div>
+    </footer>
+
+    <script src="produtos.js"></script>
+    <script src="catalogo.js"></script>
+    <script src="cart.js"></script>
+    <script src="orders.js"></script>
+    <script src="conta.js"></script>
+    <script src="search.js"></script>
+    <script src="home.js"></script>
+</body>
+</html>

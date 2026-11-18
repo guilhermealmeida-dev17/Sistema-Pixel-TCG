@@ -1,0 +1,23 @@
+# Build outputs
+/target/
+/build/
+/out/
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+*.jks
+*.keystore
+
+# Logs and temporary files
+*.log
+*.tmp
+*.bak
+
+# IDE and operating system files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db

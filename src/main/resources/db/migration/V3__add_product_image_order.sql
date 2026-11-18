@@ -1,0 +1,2 @@
+ALTER TABLE IF EXISTS produto_imagem
+    ADD COLUMN IF NOT EXISTS nr_ordem_produto_imagem INTEGER NOT NULL DEFAULT 0;

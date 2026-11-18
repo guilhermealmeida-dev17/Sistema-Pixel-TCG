@@ -1,0 +1,103 @@
+/* Responsivo: carregado por último em todas as páginas */
+img { max-width: 100%; }
+
+@media (max-width: 1024px) {
+  .header-main { gap: 14px; }
+  .hero-text h1 { font-size: 56px; }
+  .co-grid { grid-template-columns: minmax(0,1fr) 340px; gap: 24px; }
+  .cart-grid { grid-template-columns: minmax(0,1fr) 340px; gap: 24px; }
+  .pdp-grid { gap: 24px; }
+}
+
+@media (max-width: 980px) {
+  .co-grid, .cart-grid { grid-template-columns: minmax(0, 1fr); }
+  .summary { position: static; }
+}
+
+@media (max-width: 900px) {
+  .footer-container { grid-template-columns: 1fr 1fr; }
+  .hero-image-bg { display: flex !important; right: auto; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 100%; max-width: 560px; }
+  .hero-logo-large { opacity: .14; height: 80%; }
+  .products-section { padding-top: 40px; }
+}
+
+@media (max-width: 768px) {
+  .top-notice { font-size: 10px; padding: 7px 12px; }
+  .header-main { flex-wrap: wrap; padding: 10px 16px; gap: 10px; }
+  .logo { order: 1; }
+  .logo img { height: 52px; }
+  .header-actions { order: 2; margin-left: auto; gap: 14px; }
+  .search-bar { order: 3; flex: 1 1 100%; max-width: none; }
+  .user-account div { display: none; }
+  .user-account i { font-size: 22px; }
+  .cart-btn { padding: 9px 12px; }
+  .cart-label { display: none; }
+  .nav-categories { padding: 0 16px; }
+  .nav-categories ul { overflow-x: auto; white-space: nowrap; gap: 20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+  .nav-categories ul::-webkit-scrollbar { display: none; }
+
+  .hero-banner { padding: 44px 16px 24px; }
+  .hero-container { min-height: 320px; }
+  .hero-text h1 { font-size: 44px; }
+  .hero-text p { font-size: 14px; }
+  .hero-actions { flex-wrap: wrap; }
+  .store-features { grid-template-columns: 1fr 1fr; padding: 22px 16px; gap: 18px; }
+
+  .products-section { padding: 36px 16px 4px; }
+  .section-header h2 { font-size: 32px; }
+  .btn-link { align-self: flex-start; }
+  .card-image { height: 180px; }
+
+  .site-footer { padding: 40px 16px 16px; margin-top: 40px; }
+  .footer-bottom { flex-direction: column; gap: 8px; align-items: flex-start; }
+
+  /* produto */
+  .pdp { padding: 12px 16px 0; }
+  .gallery-main { height: 280px; }
+  .thumb { width: 64px; height: 54px; }
+  .buybox { padding: 18px; }
+  .buybox h1 { font-size: 20px; padding-bottom: 14px; margin-bottom: 14px; }
+  .price-box .big { font-size: 28px; }
+  .details { padding: 20px; }
+  .specs td:first-child { width: 42%; }
+
+  /* carrinho */
+  .cart-page { padding: 24px 16px 0; }
+  .cart-title h1 { font-size: 30px; }
+  .cep-row input { width: 100%; }
+  .summary { padding: 20px; }
+
+  /* checkout */
+  .co-page { padding: 24px 16px 0; }
+  .co-title { font-size: 28px; margin-bottom: 16px; }
+  .co-card { padding: 18px; margin-bottom: 16px; }
+  .deliv-type { max-width: none; }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 { font-size: 38px; }
+  .hero-actions a { flex: 1 1 100%; justify-content: center; }
+  .store-features { grid-template-columns: 1fr; }
+  .products-grid { grid-template-columns: 1fr; gap: 16px; }
+  .footer-container { grid-template-columns: 1fr; gap: 28px; }
+  .section-header h2 { font-size: 28px; }
+  .buy-row { flex-wrap: wrap; }
+  .buy-row .btn-cart { flex: 1 1 100%; min-height: 48px; }
+  .cart-row .prod { align-items: flex-start; }
+  .prod .thumb-box { width: 80px; height: 80px; }
+  .prod h3 { font-size: 14px; }
+  .row2 { grid-template-columns: 1fr; }
+  .addr-form .row > label { width: 100% !important; flex: 1 1 100%; }
+  .addr-form .w-num, .addr-form .w-uf { flex: 1 1 calc(50% - 6px); width: auto !important; }
+  .opt, .pay-top { padding: 14px; }
+  .s-total strong { font-size: 24px; }
+  .help { flex-wrap: wrap; }
+  .help a { max-width: none; }
+  .item-row .th { width: 72px; height: 60px; }
+  .item-row { flex-direction: row; align-items: center; gap: 14px; }
+  .field select { font-size: 13px; }
+}
+
+/* corrige elementos com [hidden] que ficavam visíveis (ex.: caixa vazia de endereço) */
+[hidden] { display: none !important; }
+@media (max-width: 640px) { .cart-sub { margin-bottom: 12px; } .back-link { margin: 0 0 18px; } }
