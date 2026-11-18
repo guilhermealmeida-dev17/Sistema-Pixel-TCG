@@ -45,11 +45,11 @@ mvn -version
 **Pelo GitHub:** abra o repositório e escolha **Code → Download ZIP**; extraia o arquivo em uma pasta. Ou clone pelo Git:
 
 ```powershell
-git clone https://github.com/Almeida17-csharp/PixelTCG.git
-cd PixelTCG
+git clone https://github.com/Almeida17-csharp/Sistema-Pixel-TCG.git
+cd Sistema-Pixel-TCG
 ```
 
-Troque `SEU-USUARIO` pelo nome da conta que publicou o repositório. Os comandos de inicialização devem ser executados na pasta que contém o arquivo `pom.xml`.
+Os comandos de inicialização devem ser executados na pasta que contém o arquivo `pom.xml`.
 
 ## 🗄️ Preparar o PostgreSQL
 
@@ -105,17 +105,16 @@ Saia da conta e entre novamente para atualizar a sessão. O projeto não cria us
 - [`docs/PIXEL.DOCUMENTACAO.pdf`](docs/PIXEL.DOCUMENTACAO.pdf) — documentação do projeto.
 - [`docs/REVISAO_PREVIA_APIS.md`](docs/REVISAO_PREVIA_APIS.md) — revisão das APIs.
 
-## 📤 Publicar no GitHub
+## 📤 Enviar alterações ao GitHub
 
-Crie um repositório vazio no GitHub. Na pasta do projeto, inicialize o Git e envie os arquivos:
+Se você clonou este repositório, o Git já está configurado. Depois de alterar arquivos, envie as mudanças com:
 
 ```powershell
-git init
 git add .
-git commit -m "Publica projeto Pixel TCG"
-git branch -M main
-git remote add origin https://github.com/SEU-USUARIO/PixelTCG.git
-git push -u origin main
+git commit -m "Atualiza projeto Pixel TCG"
+git push
 ```
 
-Substitua a URL pelo endereço do seu repositório. O arquivo `.gitignore` evita enviar arquivos compilados, configurações locais e segredos. **Não publique senhas do PostgreSQL, tokens ou chaves privadas.**
+Se você recebeu os arquivos por ZIP e vai publicar em um **repositório novo e vazio**, inicialize o Git e configure o endereço do novo repositório antes do primeiro envio. Não repita `git init` em uma pasta que já seja um repositório Git.
+
+O arquivo `.gitignore` evita enviar arquivos compilados, configurações locais e segredos. **Não publique senhas do PostgreSQL, tokens ou chaves privadas.**
