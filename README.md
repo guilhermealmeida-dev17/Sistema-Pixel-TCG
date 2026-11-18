@@ -45,7 +45,7 @@ mvn -version
 **Pelo GitHub:** abra o repositório e escolha **Code → Download ZIP**; extraia o arquivo em uma pasta. Ou clone pelo Git:
 
 ```powershell
-git clone https://github.com/SEU-USUARIO/PixelTCG.git
+git clone https://github.com/Almeida17-csharp/PixelTCG.git
 cd PixelTCG
 ```
 
